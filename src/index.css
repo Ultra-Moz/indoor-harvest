@@ -11,6 +11,3 @@
     @apply w-[90%] max-w-[1400px];
   }
 }
-body {
-  @apply bg-black/30;
-}
