@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@400;700&family=Kantumruy+Pro:wght@500&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .wrapper {
+    @apply w-full flex justify-center;
+  }
+  .contain {
+    @apply w-[90%] max-w-[1400px];
+  }
+}
+body {
+  @apply bg-black/30;
+}
