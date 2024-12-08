@@ -3,6 +3,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Avenir";
+  src: url("/fonts/Avenir.ttc") format("truetype-collection");
+}
+
 @layer utilities {
   .wrapper {
     @apply w-full flex justify-center;

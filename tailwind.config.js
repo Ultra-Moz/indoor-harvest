@@ -6,6 +6,7 @@ export default {
       fontFamily: {
         kantumruy: ["Kantumruy Pro", "serif"],
         averia: ["Averia Serif Libre", "serif"],
+        avenir: ["Avenir", "serif"],
       },
     },
   },
