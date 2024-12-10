@@ -4,9 +4,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: ["Avenir", "serif"],
         kantumruy: ["Kantumruy Pro", "serif"],
         averia: ["Averia Serif Libre", "serif"],
-        avenir: ["Avenir", "serif"],
       },
     },
   },

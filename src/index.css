@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: "Avenir";
-  src: url("/fonts/Avenir.ttc") format("truetype-collection");
+  src: url("/fonts/Avenir.ttc");
 }
 
 @layer utilities {
@@ -13,6 +13,6 @@
     @apply w-full flex justify-center;
   }
   .contain {
-    @apply w-[90%] max-w-[1400px];
+    @apply w-[90%] max-w-[1700px];
   }
 }
