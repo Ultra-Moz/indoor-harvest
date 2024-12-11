@@ -14,8 +14,8 @@ const Header = () => {
   const currentPath = location.pathname;
 
   return (
-    <div className="wrapper fixed py-6">
-      <div className="contain flex justify-between items-center">
+    <div className="wrapper fixed py-6 z-20">
+      <div className="max-w-[1700px] w-[90%] flex justify-between items-center">
         <img
           src="/images/logo.svg"
           alt="logo"

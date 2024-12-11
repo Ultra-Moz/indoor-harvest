@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import { ArrowDown02Icon } from "hugeicons-react";
 import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [isActive, setIsActive] = useState(false);
+
   return (
     <div
       className="wrapper min-h-screen bg-no-repeat bg-cover bg-center"
       style={{ backgroundImage: 'url("/images/hero-bg.png")' }}
     >
-      <div className="contain flex items-center relative">
+      <div className="max-w-[1700px] w-[90%] flex items-center relative">
         <div className="flex flex-col gap-6">
           <div className="text-6xl 2xl:text-7xl font-averia flex flex-col gap-3">
             <h1 className="text-white">Hydroponic Veggies</h1>
@@ -46,11 +47,26 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="z-10 absolute bottom-[15%] left-[66%] -translate-x-[66%]">
-          <div className="w-12 bg-white/30 aspect-square rounded-full flex items-center justify-center cursor-pointer">
+        <div
+          className={`z-10 absolute bottom-[15%] left-[66%] -translate-x-[66%]`}
+        >
+          <div
+            className="w-12 bg-white/30 aspect-square rounded-full flex items-center justify-center cursor-pointer"
+            onClick={() => setIsActive(!isActive)}
+          >
             <div className="w-6 bg-white aspect-square rounded-full"></div>
           </div>
-          <div className="flex bg-white rounded-full gap-3 p-2 absolute min-w-[300px] -top-[90px] left-[40px] flex-1">
+          <motion.div
+            className="flex bg-white rounded-full gap-3 p-2 absolute min-w-[300px] -top-[90px] left-[40px] flex-1 origin-bottom-left"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: isActive ? 1 : 0, opacity: isActive ? 1 : 0 }}
+            transition={{
+              type: isActive ? "spring" : "tween",
+              stiffness: isActive ? 150 : 100,
+              damping: isActive ? 15 : 0,
+              bounce: isActive ? 0.35 : 0,
+            }}
+          >
             <img
               src="/images/white-triangle.svg"
               className="absolute left-[2%] bottom-[4%] w-4"
@@ -73,7 +89,7 @@ const Hero = () => {
                 </span>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

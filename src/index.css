@@ -8,11 +8,14 @@
   src: url("/fonts/Avenir.ttc");
 }
 
+body {
+  @apply bg-[#F2F3EE];
+}
 @layer utilities {
   .wrapper {
     @apply w-full flex justify-center;
   }
   .contain {
-    @apply w-[90%] max-w-[1700px];
+    @apply w-[90%] max-w-[1300px];
   }
 }
