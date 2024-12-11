@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { ArrowDown02Icon } from "hugeicons-react";
 import Marquee from "react-fast-marquee";
 
 const Hero = () => {
+  const [isActive, setIsActive] = useState(false);
   return (
     <div
       className="wrapper min-h-screen bg-no-repeat bg-cover bg-center"
@@ -45,22 +46,22 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="z-10 absolute bottom-[16%] left-[68%] -translate-x-[65%]">
-          <div className="w-16 bg-white/30 aspect-square rounded-full flex items-center justify-center *:">
-            <div className="w-10 bg-white aspect-square rounded-full"></div>
+        <div className="z-10 absolute bottom-[15%] left-[66%] -translate-x-[66%]">
+          <div className="w-12 bg-white/30 aspect-square rounded-full flex items-center justify-center cursor-pointer">
+            <div className="w-6 bg-white aspect-square rounded-full"></div>
           </div>
-          <div className="flex bg-white rounded-full relative p-2 gap-3">
+          <div className="flex bg-white rounded-full gap-3 p-2 absolute min-w-[300px] -top-[90px] left-[40px] flex-1">
             <img
               src="/images/white-triangle.svg"
               className="absolute left-[2%] bottom-[4%] w-4"
-              alt="-"
+              alt=""
             />
             <img
               src="/images/greens-mix-dish.png"
-              className="aspect-square w-[70px]"
+              className="aspect-square w-[70px] shrink-0"
               alt="dish"
             />
-            <div className="font-averia flex flex-col">
+            <div className="font-averia flex flex-col w-full text-nowrap">
               <span className="text-[#969696] ">Green's Mix</span>
               <span className="text-[#484848] font-medium">
                 Super Green Power Pack
