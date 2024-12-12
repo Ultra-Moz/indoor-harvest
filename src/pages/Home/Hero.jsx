@@ -47,6 +47,7 @@ const Hero = () => {
           </div>
         </div>
 
+<<<<<<< Updated upstream
         <div
           className={`z-10 absolute bottom-[15%] left-[66%] -translate-x-[66%]`}
         >
@@ -67,6 +68,13 @@ const Hero = () => {
               bounce: isActive ? 0.35 : 0,
             }}
           >
+=======
+        <div className="absolute bottom-[15%] left-[66%] -translate-x-[66%]">
+          <div className="w-12 bg-white/30 aspect-square rounded-full flex items-center justify-center cursor-pointer">
+            <div className="w-6 bg-white aspect-square rounded-full"></div>
+          </div>
+          <div className="flex w-max bg-white rounded-full gap-3 p-2 absolute -top-[90px] left-[40px] flex-1">
+>>>>>>> Stashed changes
             <img
               src="/images/white-triangle.svg"
               className="absolute left-[2%] bottom-[4%] w-4"
