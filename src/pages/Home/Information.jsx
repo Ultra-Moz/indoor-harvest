@@ -1,51 +1,33 @@
 import React from "react";
-import {
-  Plant02Icon,
-  Knife01Icon,
-  CheckmarkBadge02Icon,
-  ContainerTruck01Icon,
-} from "hugeicons-react";
-
-const features = [
-  {
-    img: Plant02Icon,
-    title: "Natural Formula",
-    text: "Swap your aerated drinks with Super Green Power Packs",
-  },
-  {
-    img: Knife01Icon,
-    title: "Cruelty-Free",
-    text: "Swap your aerated drinks with Super Green Power Packs",
-  },
-  {
-    img: CheckmarkBadge02Icon,
-    title: "Expert Approved",
-    text: "Swap your aerated drinks with Super Green Power Packs",
-  },
-  {
-    img: ContainerTruck01Icon,
-    title: "Free Shipping",
-    text: "Swap your aerated drinks with Super Green Power Packs",
-  },
-];
 
 const Information = () => {
   return (
-    <div className="wrapper py-24">
-      <div className="contain">
-        <div className="flex justify-center w-full gap-4">
-          {features.map((feature, index) => (
-            <div className="flex px-4 py-6 flex-col items-center gap-3 w-full rounded-2xl bg-white">
-              <feature.img />
-              <h3 className="text-[#484848] text-center font-averia text-xl">
-                {feature.title}
-              </h3>
-              <p className="text-[#969696] text-center text-sm">
-                {feature.text}
-              </p>
-            </div>
-          ))}
+    <div className="wrapper py-20">
+      <div className="contain bg-[#343B2B] rounded-3xl flex justify-between">
+        <div className="flex flex-col p-16 justify-between">
+          <div className="font-averia text-5xl flex flex-col gap-4">
+            <h3 className="text-white">Redefining Food Culture</h3>
+            <h3 className="text-[#ffffffb3]">with Better Agriculture</h3>
+            <p className="text-xl font-sans text-[#ffffffb3] max-w-[28em]">
+              <span className="text-white">Combining</span> science-driven{" "}
+              <span className="text-white">agriculture</span> with{" "}
+              <span className="text-white">minimal resource</span> use and
+              environmental care.
+            </p>
+          </div>
+
+          <div className="flex gap-5 items-center">
+            <button className="flex h-12 items-center px-6 rounded-2xl bg-white font-kantumruy text-[#343B2B] font-medium text-sm">
+              Learn More
+            </button>
+            <button className="relative text-white font-kantumruy text-sm font-medium inline-block">
+              Discover our impact
+              <span className="absolute left-1/2 -bottom-1 h-[2px] w-[70%] bg-white transform -translate-x-1/2"></span>
+            </button>
+          </div>
         </div>
+
+        <img src="/images/information-person.png" alt="" />
       </div>
     </div>
   );

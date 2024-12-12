@@ -47,18 +47,17 @@ const Hero = () => {
           </div>
         </div>
 
-<<<<<<< Updated upstream
         <div
           className={`z-10 absolute bottom-[15%] left-[66%] -translate-x-[66%]`}
         >
           <div
-            className="w-12 bg-white/30 aspect-square rounded-full flex items-center justify-center cursor-pointer"
+            className="w-12 bg-white/30 aspect-square rounded-full flex items-center justify-center cursor-pointer hover:opacity-95 active:opacity-90"
             onClick={() => setIsActive(!isActive)}
           >
             <div className="w-6 bg-white aspect-square rounded-full"></div>
           </div>
           <motion.div
-            className="flex bg-white rounded-full gap-3 p-2 absolute min-w-[300px] -top-[90px] left-[40px] flex-1 origin-bottom-left"
+            className="flex w-max bg-white rounded-full gap-3 p-3 absolute -top-[90px] left-[40px] flex-1 origin-bottom-left"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: isActive ? 1 : 0, opacity: isActive ? 1 : 0 }}
             transition={{
@@ -68,16 +67,9 @@ const Hero = () => {
               bounce: isActive ? 0.35 : 0,
             }}
           >
-=======
-        <div className="absolute bottom-[15%] left-[66%] -translate-x-[66%]">
-          <div className="w-12 bg-white/30 aspect-square rounded-full flex items-center justify-center cursor-pointer">
-            <div className="w-6 bg-white aspect-square rounded-full"></div>
-          </div>
-          <div className="flex w-max bg-white rounded-full gap-3 p-2 absolute -top-[90px] left-[40px] flex-1">
->>>>>>> Stashed changes
             <img
               src="/images/white-triangle.svg"
-              className="absolute left-[2%] bottom-[4%] w-4"
+              className="absolute left-[3%] bottom-[5%] w-4"
               alt=""
             />
             <img
