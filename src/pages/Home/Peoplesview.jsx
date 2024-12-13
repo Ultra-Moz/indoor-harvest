@@ -45,11 +45,11 @@ const Peoplesview = () => {
         Let’s hear what people say
       </h2>
       <div className="flex justify-center gap-10 overflow-hidden">
-        {peoplesViewsInfo.map((peopleView, index) => (
-          <ViewsCard peopleView={peopleView} />
+        {peoplesViewsInfo.map((cardInfo, index) => (
+          <Card cardInfo={cardInfo} key={index} />
         ))}
-        {peoplesViewsInfo.map((peopleView, index) => (
-          <ViewsCard peopleView={peopleView} key={index} />
+        {peoplesViewsInfo.map((cardInfo, index) => (
+          <Card cardInfo={cardInfo} key={index} />
         ))}
       </div>
     </div>
@@ -58,7 +58,7 @@ const Peoplesview = () => {
 
 export default Peoplesview;
 
-const ViewsCard = ({ peopleView }) => {
+const Card = ({ cardInfo }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isShown, setIsShown] = useState(false);
 
@@ -66,14 +66,23 @@ const ViewsCard = ({ peopleView }) => {
   const videoRef = useRef(null);
   const titleRef = useRef(null);
   const containerRef = useRef(null);
+  const arrowRef = useRef(null);
 
   useEffect(() => {
     if (paragraphRef.current) {
       const height = paragraphRef.current.offsetHeight;
       gsap.to(containerRef.current, {
-        transform: isShown ? `translateY(-${height + 14}px )` : "0px",
+        transform: () =>
+          isShown ? `translateY(-${height + 18}px )` : "translateY(0px)",
+        ease: "back.out(1.1)",
+        duration: 0.8,
       });
     }
+    gsap.to(arrowRef.current, {
+      rotate: isShown ? "180deg" : "0deg",
+      ease: "back.out(1.2)",
+      duration: 0.6,
+    });
   }, [isShown]);
 
   useEffect(() => {
@@ -100,7 +109,7 @@ const ViewsCard = ({ peopleView }) => {
       <div className="flex flex-col" ref={containerRef}>
         <div className="h-[390px]" ref={videoRef}>
           <video
-            src={peopleView.video}
+            src={cardInfo.video}
             loop
             autoPlay
             muted
@@ -114,29 +123,25 @@ const ViewsCard = ({ peopleView }) => {
         <div ref={titleRef} className="px-3.5 py-3 flex flex-col gap-2">
           <div className="flex">
             <span className="text-[#343B2B] text-lg leading-[1.3] font-averia font-medium mr-3">
-              {peopleView.title}
+              {cardInfo.title}
             </span>
             <div
               className="my-1 w-7 rounded-2xl items-center  flex justify-center bg-[#F2F3EE] shrink-0 cursor-pointer"
               onClick={() => setIsShown(!isShown)}
             >
-              <ArrowDownDoubleIcon
-                className={`transition-transform duration-300 ${
-                  isShown ? "rotate-180" : ""
-                }`}
-              />
+              <ArrowDownDoubleIcon ref={arrowRef} className={``} />
             </div>
           </div>
 
           <span className="text-[#343B2B] self-end font-medium">
-            - {peopleView.personName}
+            - {cardInfo.personName}
           </span>
         </div>
         <div
           ref={paragraphRef}
           className="mt-3 px-3.5 text-black text-lg font-medium"
         >
-          <p>{peopleView.view}</p>
+          <p>{cardInfo.view}</p>
         </div>
       </div>
     </div>

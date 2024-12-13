@@ -26,8 +26,13 @@ const Information = () => {
             </button>
           </div>
         </div>
-
-        <img src="/images/information-person.png" className="w-full" alt="" />
+        <div className="w-full flex justify-center">
+          <img
+            src="/images/information-person.png"
+            className="object-cover h-full"
+            alt=""
+          />
+        </div>
       </div>
     </div>
   );
