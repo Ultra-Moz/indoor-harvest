@@ -60,24 +60,31 @@ export default Peoplesview;
 
 const ViewsCard = ({ peopleView }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [containerHeight, setContainerHeight] = useState(0);
   const [isShown, setIsShown] = useState(false);
 
-  const containerRef = useRef(null);
+  const paragraphRef = useRef(null);
   const videoRef = useRef(null);
+  const titleRef = useRef(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
-    if (containerRef.current) {
-      setContainerHeight(containerRef.current.offsetHeight);
+    if (paragraphRef.current) {
+      const height = paragraphRef.current.offsetHeight;
+      gsap.to(containerRef.current, {
+        transform: isShown ? `translateY(-${height + 14}px )` : "0px",
+      });
     }
-  }, []);
+  }, [isShown]);
 
   useEffect(() => {
     gsap.to(videoRef.current, {
-      height: isHovered ? "300px" : "390px",
-      padding: isHovered ? "12px" : "0px",
-      ease: isHovered ? "elastic.out(1, 0.5)" : "power2.inOut", // Elastic on hover, normal ease when returning
-      duration: 1, // Slower animation duration
+      height: () =>
+        isHovered ? `${390 - titleRef.current.offsetHeight}px` : "390px",
+      paddingLeft: isHovered ? "12px" : "0px",
+      paddingRight: isHovered ? "12px" : "0px",
+      paddingTop: isHovered ? "12px" : "0px",
+      ease: isHovered ? "back.out(1.1)" : "power2.inOut",
+      duration: 0.65,
     });
   }, [isHovered]);
 
@@ -90,32 +97,27 @@ const ViewsCard = ({ peopleView }) => {
         setIsShown(false);
       }}
     >
-      <div
-        className="flex flex-col"
-        style={{
-          transform: isShown
-            ? `translateY(-${containerHeight + 14}px)`
-            : "none",
-        }}
-      >
-        <video
-          src={peopleView.video}
-          loop
-          autoPlay
-          muted
-          className={`self-center w-full object-cover rounded-3xl h-[390px]`}
-          ref={videoRef}
-        >
-          Your browser does not support the video tag.
-        </video>
+      <div className="flex flex-col" ref={containerRef}>
+        <div className="h-[390px]" ref={videoRef}>
+          <video
+            src={peopleView.video}
+            loop
+            autoPlay
+            muted
+            playsInline
+            className={`self-center w-full object-cover h-full rounded-[14px]`}
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
 
-        <div className="px-3.5 flex flex-col gap-2">
+        <div ref={titleRef} className="px-3.5 py-3 flex flex-col gap-2">
           <div className="flex">
             <span className="text-[#343B2B] text-lg leading-[1.3] font-averia font-medium mr-3">
               {peopleView.title}
             </span>
             <div
-              className="my-1 w-7 rounded-2xl items-center  flex justify-center bg-[#F2F3EE] shrink-0"
+              className="my-1 w-7 rounded-2xl items-center  flex justify-center bg-[#F2F3EE] shrink-0 cursor-pointer"
               onClick={() => setIsShown(!isShown)}
             >
               <ArrowDownDoubleIcon
@@ -131,10 +133,10 @@ const ViewsCard = ({ peopleView }) => {
           </span>
         </div>
         <div
-          ref={containerRef}
+          ref={paragraphRef}
           className="mt-3 px-3.5 text-black text-lg font-medium"
         >
-          {peopleView.view}
+          <p>{peopleView.view}</p>
         </div>
       </div>
     </div>
