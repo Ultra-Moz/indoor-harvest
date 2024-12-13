@@ -8,7 +8,7 @@ const Information = () => {
           <div className="font-averia text-5xl flex flex-col gap-4 text-nowrap">
             <h3 className="text-white">Redefining Food Culture</h3>
             <h3 className="text-[#ffffffb3]">with Better Agriculture</h3>
-            <p className="text-xl font-sans text-[#ffffffb3] max-w-[22em] text-wrap">
+            <p className="text-xl font-sans text-[#ffffffb3] max-w-[22em] mt-3 text-wrap">
               <span className="text-white">Combining</span> science-driven{" "}
               <span className="text-white">agriculture</span> with{" "}
               <span className="text-white">minimal resource</span> use and
