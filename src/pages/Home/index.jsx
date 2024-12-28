@@ -3,7 +3,8 @@ import Hero from "./Hero";
 import Products from "./Products";
 import Introduction from "./Introduction";
 import Information from "./Information";
-import Peoplesview from "./Peoplesview";
+import PeoplesView from "./PeoplesView";
+import OrderSection from "./OrderSection";
 
 const Home = () => {
   return (
@@ -12,7 +13,8 @@ const Home = () => {
       <Introduction />
       <Products />
       <Information />
-      <Peoplesview />
+      <PeoplesView />
+      <OrderSection />
     </>
   );
 };

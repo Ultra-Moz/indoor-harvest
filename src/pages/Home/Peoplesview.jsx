@@ -5,7 +5,7 @@ import { CSSPlugin } from "gsap/all";
 
 gsap.registerPlugin(CSSPlugin);
 
-const peoplesViewsInfo = [
+const PeoplesViewsInfo = [
   {
     video: "/videos/review-1.mp4",
     title: "Tech Meets Agriculture",
@@ -38,17 +38,17 @@ const peoplesViewsInfo = [
   },
 ];
 
-const Peoplesview = () => {
+const PeoplesView = () => {
   return (
     <div className="w-full justify-center pb-24 gap-16 flex flex-col">
       <h2 className="text-[#343B2B] text-center text-6xl font-averia">
         Let’s hear what people say
       </h2>
       <div className="flex justify-center gap-10 overflow-hidden">
-        {peoplesViewsInfo.map((cardInfo, index) => (
+        {PeoplesViewsInfo.map((cardInfo, index) => (
           <Card cardInfo={cardInfo} key={index} />
         ))}
-        {peoplesViewsInfo.map((cardInfo, index) => (
+        {PeoplesViewsInfo.map((cardInfo, index) => (
           <Card cardInfo={cardInfo} key={index} />
         ))}
       </div>
@@ -56,7 +56,7 @@ const Peoplesview = () => {
   );
 };
 
-export default Peoplesview;
+export default PeoplesView;
 
 const Card = ({ cardInfo }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -73,7 +73,7 @@ const Card = ({ cardInfo }) => {
       const height = paragraphRef.current.offsetHeight;
       gsap.to(containerRef.current, {
         transform: () =>
-          isShown ? `translateY(-${height + 18}px )` : "translateY(0px)",
+          isShown ? `translateY(-${height + 22}px )` : "translateY(0px)",
         ease: "back.out(1.1)",
         duration: 0.8,
       });
