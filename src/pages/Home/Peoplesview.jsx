@@ -73,7 +73,7 @@ const Card = ({ cardInfo }) => {
       const height = paragraphRef.current.offsetHeight;
       gsap.to(containerRef.current, {
         transform: () =>
-          isShown ? `translateY(-${height + 22}px )` : "translateY(0px)",
+          isShown ? `translateY(-${height + 22}px)` : "translateY(0px)",
         ease: "back.out(1.1)",
         duration: 0.8,
       });
