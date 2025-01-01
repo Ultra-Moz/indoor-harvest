@@ -38,7 +38,7 @@ const PeoplesViewsInfo = [
   },
 ];
 
-const PeoplesView = () => {
+const PeoplesViews = () => {
   return (
     <div className="w-full justify-center pb-24 gap-16 flex flex-col">
       <h2 className="text-[#343B2B] text-center text-6xl font-averia">
@@ -56,7 +56,7 @@ const PeoplesView = () => {
   );
 };
 
-export default PeoplesView;
+export default PeoplesViews;
 
 const Card = ({ cardInfo }) => {
   const [isHovered, setIsHovered] = useState(false);
