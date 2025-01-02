@@ -1,3 +1,4 @@
+import { BubbleChatIcon, TelephoneIcon } from "hugeicons-react";
 import React from "react";
 
 const OrderSection = () => {
@@ -27,6 +28,55 @@ const OrderSection = () => {
             </button>
           </div>
           <div className="w-full h-[2px] bg-[#343b3580] rounded-full"></div>
+        </div>
+
+        <div>
+          <div>
+            <div>
+              <h3>Cart Details</h3>
+              <div>
+                <span>Harvest</span>
+                <div></div>
+                <span>In progress</span>
+              </div>
+            </div>
+
+            <div>
+              <div></div>
+              <div>
+                <div>
+                  <h4>12 Kgs</h4>
+                  <span>Weight</span>
+                </div>
+                <div>
+                  <h4>$23.66</h4>
+                  <span>Cost</span>
+                </div>
+                <div>
+                  <h4>4</h4>
+                  <span>Days</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <img src="/images/order-section-pfp.png" alt="pfp of person" />
+                <div>
+                  <span>Srujana Kalpesh</span>
+                  <span>Courier</span>
+                </div>
+              </div>
+              <div>
+                <button>
+                  <TelephoneIcon />
+                </button>
+                <button>
+                  <BubbleChatIcon />
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
